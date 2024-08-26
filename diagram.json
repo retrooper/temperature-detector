@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 154.75,
+      "left": 152.25,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-lcd1602", "id": "wokwi-lcd1602-0", "top": -15.77, "left": 83.2, "attrs": {} },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "wokwi-ntc-temperature-sensor-0",
+      "top": 146.6,
+      "left": -115.8,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "wokwi-ntc-temperature-sensor-0:VCC", "pico:VSYS", "red", [ "h0" ] ],
+    [ "wokwi-ntc-temperature-sensor-0:OUT", "pico:GP26", "green", [ "h0" ] ],
+    [ "wokwi-ntc-temperature-sensor-0:GND", "pico:GND.1", "black", [ "h0" ] ],
+    [ "pico:GP12", "wokwi-lcd1602-0:RS", "green", [ "v0" ] ],
+    [ "pico:GP11", "wokwi-lcd1602-0:E", "green", [ "v0" ] ],
+    [ "pico:GP10", "wokwi-lcd1602-0:D4", "green", [ "v0" ] ],
+    [ "pico:GP9", "wokwi-lcd1602-0:D5", "green", [ "v0" ] ],
+    [ "pico:GP8", "wokwi-lcd1602-0:D6", "green", [ "v0" ] ],
+    [ "pico:GP7", "wokwi-lcd1602-0:D7", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:VDD", "pico:VSYS", "green", [ "v0" ] ],
+    [ "wokwi-lcd1602-0:A", "pico:VSYS", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
