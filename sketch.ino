@@ -10,8 +10,10 @@ void setup() {
   Serial1.begin(115200);
   //Serial1.println("Hello, Raspberry Pi Pico W!");
   lcd.begin(16, 2);
-  lcd.println("Detecting temperature");
-  delay(1000);
+  lcd.println("Detecting");
+  lcd.setCursor(0, 2);
+  lcd.println("temperature...");
+  delay(1500);
 }
 void loop() {
   // put your main code here, to run repeatedly:
